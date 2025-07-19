@@ -1,0 +1,41 @@
+@TaskManager_HostAddress = http://localhost:5228
+
+### Get all tasks
+GET {{TaskManager_HostAddress}}/api/tasks
+Accept: application/json
+
+###
+
+### Get a task by ID (e.g., 1)
+GET {{TaskManager_HostAddress}}/api/tasks/1
+Accept: application/json
+
+###
+
+### Create a new task
+POST {{TaskManager_HostAddress}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Finish building TaskManager API",
+  "description": "Implement CRUD endpoints and test",
+  "isCompleted": false
+}
+
+###
+
+### Update a task (e.g., ID 1)
+PUT {{TaskManager_HostAddress}}/api/tasks/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Finish building TaskManager API",
+  "description": "Update completed status",
+  "isCompleted": true
+}
+
+###
+
+### Delete a task (e.g., ID 1)
+DELETE {{TaskManager_HostAddress}}/api/tasks/1
